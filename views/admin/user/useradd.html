@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="renderer" content="webkit">
+  <title></title>
+  <link rel="stylesheet" media="screen" href="/public/assets/css/bootstrap.css">
+  <script src="/public/admin/js/jquery.js"></script>
+  <style>
+    .panel-body{
+      padding: 6px !important;
+    }
+  </style>
+</head>
+<body>
+<h1 style="text-align: center">增加用户</h1>
+<div class="panel-body">
+  <form role="form" method="post" action="/admin/user/useradd" style="width: 360px; margin-left: 375px">
+    <div class="panel-body">
+      <label>ID</label>
+      <input name="uid" type="text" class="form-control" placeholder="">
+    </div>
+    <div class="panel-body">
+      <label>初始密码</label>
+      <input name="password" type="text" class="form-control" value="123456" readonly>
+    </div>
+    <div class="panel-body">
+      <label>姓名</label>
+      <input name="uname" type="text" class="form-control" placeholder="">
+    </div>
+    <div class="panel-body">
+      <label>所属部门</label>
+      <select class="form-control" name="departid">
+        <%if(depart){%>
+        <%depart.forEach(e=>{%>
+        <option value="<%=e.id%>"><%=e.name%></option>
+        <%})%>
+        <%}%>
+      </select>
+    </div>
+    <div class="panel-body">
+      <label>角色</label>
+      <select class="form-control" name="rid">
+        <%if(role){%>
+        <%role.forEach(e=>{%>
+        <option value="<%=e.rid%>"><%=e.rname%></option>
+        <%})%>
+        <%}%>
+      </select>
+    </div>
+    <div class="panel-body" align="center">
+      <button class="btn btn-danger" type="submit">添加</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

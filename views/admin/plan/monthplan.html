@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <title>后台管理中心</title>
+  <link rel="stylesheet" media="screen" href="/public/assets/css/bootstrap.css">
+  <!--    <link rel="stylesheet" href="/public/admin/css/pintuer.css">-->
+  <link rel="stylesheet" href="/public/admin/css/admin.css">
+  <link rel="stylesheet" href="/public/bootstrapValidator.css">
+  <script src="/public/admin/js/jquery.js"></script>
+  <script src="/public/bootstrapValidator.js"></script>
+  <script src="/public/validate.js"></script>
+  <script src="/public/btnonclick.js"></script>
+  <script>
+    function changeCate() {
+      $("#classname").val("");
+      var classcode = $("#classcode").find("option:selected").val();
+      if (classcode == '' && classcode == -1) {
+        return false;
+      } else {
+        var material = JSON.parse('<%-JSON.stringify(material)-%>');
+        var option = "<option value=\"\">---请选择---</option>";
+        $.each(material, function (i, item) {
+          if (item.classcode == classcode) {
+            option += "<option value='" + item.mcode + "'>" + item.mcode + '--' + item.mname + "</option>";
+            if ($("#classname").val() != (item.classname)) {
+              $("#classname").val(item.classname);
+            }
+          }
+        });
+        $("#mcode").html(option);
+      }
+    }
+
+    function select() {
+      var material = JSON.parse('<%-JSON.stringify(material)-%>');
+      $("#mname").val("");
+      var mcode = $("#mcode").find("option:selected").val();
+      $.each(material, function (i, e) {
+        if (mcode != "" && mcode == e.mcode) {
+          $("#mname").val(e.mname);
+          $("#danwei").val(e.danwei);
+        }
+      });
+    }
+  </script>
+  <style>
+    .panel-body {
+      padding: 6px 15px !important;
+    }
+
+    .box1,
+    .box2 {
+      display: inline-block;
+      width: 490px;
+      height: 100%;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5 {
+      margin-left: 45px;
+    }
+
+    .box3 .panel-body {
+      display: inline-block;
+    }
+
+    .box4,
+    .box5 {
+      width: 1025px;
+    }
+
+    .box5 {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="panel admin-panel">
+    <h1 class="" style="text-align: center;"><strong> 新建月度计划</strong></h1>
+    <div class="body-content">
+      <form method="post" role="form" action="/admin/plan/insert" id="plan" name="plan">
+        <div class="box1">
+          <div class="panel-body">
+            <label for="xqtype">需求计划类型</label>
+            <select name="xqtype" id="xqtype" class="form-control" style="pointer-events: none;">
+              <option value="年度计划">年度计划</option>
+              <option value="月度计划" selected>月度计划</option>
+              <option value="紧急计划">紧急计划</option>
+            </select>
+          </div>
+
+          <div class="panel-body">
+            <label for="xuqiuname">需求计划名称</label>
+            <input id="xuqiuname" type="text" class="form-control" name="xuqiuname" placeholder="" />
+          </div>
+
+          <div class="panel-body">
+            <label for="xuqiubumen">需求部门</label>
+            <select name="xuqiubumen" id="xuqiubumen" class="selectpicker form-control">
+              <option value="">--请选择--</option>
+              <%if(data && data.length!=0){%>
+              <%data.forEach(item=>{%>
+              <option value="<%=item.id%>"><%=item.name%></option>
+              <%})%>
+              <%}%>
+          </select>
+        </div>
+
+        <div class="panel-body">
+          <label for="xuqiurenyuan">需求人员</label>
+          <input type="text" class="form-control" id="xuqiurenyuan" name="xuqiurenyuan" placeholder="" />
+        </div>
+
+        <div class="panel-body">
+          <label for="classcode">物料分类编码</label>
+          <select name="classcode" id="classcode" class="form-control" onchange="changeCate()">
+            <option value="">---请选择---</option>
+            <%if(cdata && cdata.length!=0){%>
+              <%cdata.forEach(item=>{%>
+              <option value="<%=item.classcode%>"><a><%=item.classcode%>--<%=item.classname%></a></option>
+              <%})%>
+              <%}%>
+          </select>
+        </div>
+
+        <div class="panel-body">
+          <span class="label">物料分类名称</span>
+          <input name="classname" id="classname" type="text" class="form-control" placeholder="" readonly=”readonly”>
+        </div>
+
+        <div class="panel-body">
+            <label for="mcode">物料编码</label>
+            <select name="mcode" id="mcode" class="form-control" onchange="select()">
+            </select>
+        </div>
+
+        <div class="panel-body">
+          <label>物料名称</label>
+          <input name="mname" id="mname" type="text" class="form-control" placeholder="" readonly=”readonly”>
+        </div>
+        </div>
+
+        <div class="box2">
+          <div class="panel-body">
+            <label for="guige">规格</label>
+            <input name="guige" id="guige" type="text" class="form-control" placeholder="">
+          </div>
+
+          <div class="panel-body">
+            <label for="xinhao">型号</label>
+            <input name="xinhao" id="xinhao" type="text" class="form-control" placeholder="">
+          </div>
+
+          <div class="panel-body">
+            <label for="danwei">单位</label>
+            <input name="danwei" id="danwei" type="text" class="form-control" placeholder="" readonly=”readonly”>
+          </div>
+
+          <div class="panel-body">
+            <label for="xuqiunum">需求数量</label>
+            <input name="xuqiunum" id="xuqiunum" type="text" class="form-control" placeholder="">
+          </div>
+
+          <div class="panel-body">
+            <label for="month">需求月份</label>
+            <input name="month" id="month" type="month" class="form-control" value="2019-08">
+          </div>
+
+          <div class="panel-body">
+            <label for="xuqiudate">需求日期</label>
+            <input name="xuqiudate" id="xuqiudate" type="date" class="form-control" value="2019-11-11">
+          </div>
+
+          <div class="panel-body">
+            <label for="qiwangsid">期望供应商</label>
+            <select id="qiwangsid" class="form-control" onchange="">
+              <option value=""></option>
+              <%if(sup!=''&&sup.length!=0){%>
+              <%sup.forEach(item=>{%>
+              <option value="<%=item.sid%>"><%=item.sname%></option>
+              <%})%>
+              <%}%>
+              </select>
+          </div>
+
+          <div class="panel-body">
+            <label for="gudinsid">固定供应商</label>
+            <select id="gudinsid" class="form-control" onchange="">
+              <option value=""></option>
+                <%if(sup!=''&&sup.length!=0){%>
+              <%sup.forEach(item=>{%>
+              <option value="<%=item.sid%>"><%=item.sname%></option>
+              <%})%>
+              <%}%>
+            </select>
+          </div>
+        </div>
+        
+        <div class="box3">
+          <div class="panel-body form-inline">
+            <label for="dingdantype">是否订单型</label>
+            <label><input id="dingdantype" name="dingdantype" type="checkbox" value="是"></label>
+          </div>
+
+          <div class="panel-body form-inline">
+            <label for="huoyuan">货源是否确定</label>
+            <select name="huoyuan" id="huoyuan" class="form-control">
+              <option value="是">是</option>
+              <option value="否">否</option>
+            </select>
+          </div>
+
+          <div class="panel-body form-inline">
+            <label for="yusuannei">是否预算内</label>
+            <label><input id="yusuannei" name="yusuannei" type="checkbox" value="是"></label>
+          </div>
+        </div>
+
+        <div class="box4">
+          <div class="panel-body">
+            <label for="beizhu">备注</label>
+            <textarea id="beizhu" class="form-control" rows="3" placeholder=""></textarea>
+          </div>
+        </div>
+
+          <div class="box5">
+            <div class="panel-body form-inline">
+              <button name="savexuqiu" class="btn btn-info btn-lg" onclick="submission(0)">保存</button>
+              <button name="tijiaoshenhe" class="btn btn-info btn-lg" onclick="submission(1)">提交</button>
+            </div>
+          </div>
+
+        <div class="panel-body">
+          <input class="form-control" id="states" name="states" type="text" style="visibility: hidden;" readonly>
+        </div>
+          
+        </form>
+    </div>
+</div>
+</body>
+</html>

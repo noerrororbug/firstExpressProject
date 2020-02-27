@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>物资需求计划汇总</title>
+  <link rel="stylesheet" href="/public/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/admin/css/screen.css">
+  <script src="/public/admin/js/jquery.js"></script>
+  <script src="/public/btnonclick.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#first-tab").addClass('buttonHover');
+    });
+
+    function navigate_tabs(container, tab) {
+      $(".b").css('display', 'none');
+      $(".c").css('display', 'none');
+      $(".a").css('display', 'none');
+
+      $("#first-tab").removeClass('buttonHover');
+      $("#second-tab").removeClass('buttonHover');
+      $("#third-tab").removeClass('buttonHover');
+
+      $("#" + tab).addClass('buttonHover');
+      $("." + container).show('slow');
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <div>
+      <h3>物资需求计划汇总</h3>
+    </div>
+    <!-- 创建物料信息输入区域 -->
+      <form action="/admin/plan/updateplan" method="post">
+    <!-- 物料信息展示区域 -->
+    <div>
+      <div align="center">
+        <div id="wrap">
+          <a href="javascript:navigate_tabs('a','first-tab');" class="buttons" id="first-tab">年度计划</a>
+          <a href="javascript:navigate_tabs('b','second-tab');" class="buttons" id="second-tab">月度计划</a>
+          <a href="javascript:navigate_tabs('c','third-tab');" class="buttons" id="third-tab">紧急计划</a>
+          <div id="body" align="center">
+            <div class="a">
+              <table class="table table-bordered table-striped table-hover text-center">
+                <thead>
+                  <tr>
+                    <th>需求计划编码</th>
+                    <th class="add">物料分类编码</th>
+                    <th>物料分类名称</th>
+                    <th class="add">物料编码</th>
+                    <th>物料名称</th>
+                    <th>规格</th>
+                    <th>型号</th>
+                    <th>单位</th>
+                    <th>需求数量</th>
+                    <th>需求月份</th>
+                    <th>需求日期</th>
+                    <th>货源是否确定</th>
+                    <th>期望供应商</th>
+                    <th>固定供应商</th>
+                    <th>备注</th>
+                    <th>物料追踪码</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <%if(data){%>
+                <%data.forEach(e=>{%>
+                <%if(e.xqtype=='年度计划'){%>
+                  <tr>
+                    <td><%=e.demandid%></td>
+                    <td><%=e.classcode%></td>
+                    <td><%=e.classname%></td>
+                    <td><%=e.mcode%></td>
+                    <td><%=e.mname%></td>
+                    <td><%=e.guige%></td>
+                    <td><%=e.xinhao%></td>
+                    <td><%=e.danwei%></td>
+                    <td><%=e.xuqiunum%></td>
+                    <td><%=e.month%></td>
+                    <td><%=e.xuqiudate%></td>
+                    <td><%=e.huoyuan%></td>
+                    <%if(sup){%>
+                    <%sup.forEach(s=>{%>
+                    <%if(s.sid==e.qiwangsid){%>
+                    <td><%=s.sname%></td>
+                    <%}%>
+                    <%})%>
+                    <%}%>
+                    <%if(sup){%>
+                    <%sup.forEach(s=>{%>
+                    <%if(s.sid==e.gudinsid){%>
+                    <td><%=s.sname%></td>
+                    <%}%>
+                    <%})%>
+                    <%}%>
+                    <td><%=e.beizhu%></td>
+                    <td><%=e.zhuizhongma%></td>
+                  </tr>
+                <%}%>
+                <%})%>
+                <%}%>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="b">
+
+              <table class="table table-bordered table-striped table-hover text-center">
+                <thead>
+                <tr>
+                  <th>需求计划编码</th>
+                  <th class="add">物料分类编码</th>
+                  <th>物料分类名称</th>
+                  <th class="add">物料编码</th>
+                  <th>物料名称</th>
+                  <th>规格</th>
+                  <th>型号</th>
+                  <th>单位</th>
+                  <th>需求数量</th>
+                  <th>需求月份</th>
+                  <th>需求日期</th>
+                  <th>货源是否确定</th>
+                  <th>期望供应商</th>
+                  <th>固定供应商</th>
+                  <th>备注</th>
+                  <th>物料追踪码</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%if(data){%>
+                <%data.forEach(e=>{%>
+                <%if(e.xqtype=='月度计划'){%>
+                <tr>
+                  <td><%=e.demandid%></td>
+                  <td><%=e.classcode%></td>
+                  <td><%=e.classname%></td>
+                  <td><%=e.mcode%></td>
+                  <td><%=e.mname%></td>
+                  <td><%=e.guige%></td>
+                  <td><%=e.xinhao%></td>
+                  <td><%=e.danwei%></td>
+                  <td><%=e.xuqiunum%></td>
+                  <td><%=e.month%></td>
+                  <td><%=e.xuqiudate%></td>
+                  <td><%=e.huoyuan%></td>
+                  <%if(sup){%>
+                  <%sup.forEach(s=>{%>
+                  <%if(s.sid==e.qiwangsid){%>
+                  <td><%=s.sname%></td>
+                  <%}%>
+                  <%})%>
+                  <%}%>
+                  <%if(sup){%>
+                  <%sup.forEach(s=>{%>
+                  <%if(s.sid==e.gudinsid){%>
+                  <td><%=s.sname%></td>
+                  <%}%>
+                  <%})%>
+                  <%}%>
+                  <td><%=e.beizhu%></td>
+                  <td><%=e.zhuizhongma%></td>
+                </tr>
+                <%}%>
+                <%})%>
+                <%}%>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="c" align="center">
+              <table class="table table-bordered table-striped table-hover text-center">
+                <thead>
+                <tr>
+                  <th>需求计划编码</th>
+                  <th class="add">物料分类编码</th>
+                  <th>物料分类名称</th>
+                  <th class="add">物料编码</th>
+                  <th>物料名称</th>
+                  <th>规格</th>
+                  <th>型号</th>
+                  <th>单位</th>
+                  <th>需求数量</th>
+                  <th>需求月份</th>
+                  <th>需求日期</th>
+                  <th>货源是否确定</th>
+                  <th>期望供应商</th>
+                  <th>固定供应商</th>
+                  <th>备注</th>
+                  <th>物料追踪码</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%if(data){%>
+                <%data.forEach(e=>{%>
+                <%if(e.xqtype=='紧急计划'){%>
+                <tr>
+                  <td><%=e.demandid%></td>
+                  <td><%=e.classcode%></td>
+                  <td><%=e.classname%></td>
+                  <td><%=e.mcode%></td>
+                  <td><%=e.mname%></td>
+                  <td><%=e.guige%></td>
+                  <td><%=e.xinhao%></td>
+                  <td><%=e.danwei%></td>
+                  <td><%=e.xuqiunum%></td>
+                  <td><%=e.month%></td>
+                  <td><%=e.xuqiudate%></td>
+                  <td><%=e.huoyuan%></td>
+                  <%if(sup){%>
+                  <%sup.forEach(s=>{%>
+                  <%if(s.sid==e.qiwangsid){%>
+                  <td><%=s.sname%></td>
+                  <%}%>
+                  <%})%>
+                  <%}%>
+                  <%if(sup){%>
+                  <%sup.forEach(s=>{%>
+                  <%if(s.sid==e.gudinsid){%>
+                  <td><%=s.sname%></td>
+                  <%}%>
+                  <%})%>
+                  <%}%>
+                  <td><%=e.beizhu%></td>
+                  <td><%=e.zhuizhongma%></td>
+                </tr>
+                <%}%>
+                <%})%>
+                <%}%>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 按钮功能区域 -->
+    <div align="center">
+      <button type="submit" class="btn btn-primary submit" disabled="disabled">修改</button>
+      <button type="button" class="btn btn-primary">复制</button>
+      <button type="button" class="btn btn-primary">打印</button>
+      <button type="button" class="btn btn-primary">导出</button>
+      <button type="button" class="btn btn-primary">附件</button>
+      <button type="button" class="btn btn-primary">提醒（X）</button>
+      <button type="button" class="btn btn-primary">删除</button>
+      <button type="button" class="btn btn-primary">关闭/退出</button>
+    </div>
+      </form>
+  </div>
+</body>
+
+</html>

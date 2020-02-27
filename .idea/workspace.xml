@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="1ca0085f-afbf-41c4-a42b-0038d4f9fc8b" name="Default Changelist" comment="上传测试">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/admin/rolegroup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/plan/approval.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/plan/plansummary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/admin/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/admin/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/admin/plan.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/admin/plan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/admin/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/admin/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/plan/updateplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/plan/updateplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/user/userlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/user/userlist.html" afterDir="false" />
+=======
+    <list default="true" id="1ca0085f-afbf-41c4-a42b-0038d4f9fc8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/0299c4ec92d581369f030e4d34b7d973" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/06337d6dae6dd9fe4b657e68e2282bf0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/0cf1617cc4febfb0bf7167f60502c9bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/1161650cf7708b557f80ee51e1d6e173" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/158799d17fb48c547437f87c308192c1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/1e147a4b783f4d3d42c27e36515dee41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/25143b5a603769150135ebc16d43259f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/26790c5fb7fa93eccb13288bc52f0138" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/3a77a2db003bb0923f04da72d1cd9ed6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/3aaa57092c7b2d7a4e0bcc3a1b049ae2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/4371f244b7b6db4710454885fdb8dab2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/4663258ce117822950e7753317cd50a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/494a0292f0f827420be727e3a76d7373" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/4ff7a9238e57f0db5eed480a4a6e1c83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/55e59b8a7236451677e74a403d4f35c7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/65422116b8e553c4c8c059f1c2bca034" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/67ce15664adad6ad643e2d09cad423c2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/6a07af52be0be648ebfebbaa3b26f5c8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/6a9fcfd2154a0cb54ad9c89ddd5b25ce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/6e425d96e9b5b84d3f55c86141e9f371" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/705493658d4813cd05f4b8cfaa2fe4c1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/7fd9adcd5f54d4060293315d0fc6cbb8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/86094513e9781e48e242d62eb1a8be17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/91249071f9fd5b93397a15add325aa81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/92160bcb47880d27d34724240719c32a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/abfe6197c8bde2bda2bacd286469d947" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/b1dc5ec5f2642f83d1bae08befa6301f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bad29eb0fb5c6511a1199e91f813f827" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bebbc9c226ba0c6fc8b64deb83ae89b8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/c05760c3b79bcf7ae46fda79cbd88ad3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/c2489d6bef8d9135df43674ce860af2f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/c4449acb8a2b127e0920e40ed181291e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/c540c48c7d4082f5c7ebf5528d2e0880" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/e0333cc2fd0af05823587a3365198e73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/f7910d8427d068f824651332bec9a47f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/fcb5266f85e4f0fc588e6d96c62531fb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/fde716b99e2a7fd799f9180f71b8f39d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/plan/monthplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/plan/monthplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/plan/planlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/plan/planlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/plan/updateplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/plan/updateplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/plan/urgentplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/plan/urgentplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/plan/yearplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/plan/yearplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/supplier/suplist.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/supplier/suplist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/user/useradd.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/user/useradd.html" afterDir="false" />
+>>>>>>> 24aed22854e3d9c0bf7c32b6b6099dc1e27b170b
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+<<<<<<< HEAD
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routers/admin/plan.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="839" column="16" selection-start-line="839" selection-start-column="16" selection-end-line="839" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/plan/approval.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routers/admin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/plan/plansummary.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-108">
+              <caret line="199" column="34" selection-start-line="199" selection-start-column="34" selection-end-line="199" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/plan/updateplan.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="193" column="25" lean-forward="true" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+=======
+  <component name="FavoritesManager">
+    <favorites_list name="rich" />
+>>>>>>> 24aed22854e3d9c0bf7c32b6b6099dc1e27b170b
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+<<<<<<< HEAD
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>glyphicon-arrow-right</find>
+      <find>glyphicon</find>
+      <find>logo</find>
+      <find>fadein-top</find>
+      <find>/admin/plan</find>
+      <find>updateplan</find>
+      <find>demandid</find>
+      <find>submit</find>
+      <find>insert</find>
+      <find>name</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/common/nesting.js" />
+        <option value="$PROJECT_DIR$/views/admin/error.html" />
+        <option value="$PROJECT_DIR$/views/admin/leftnav.html" />
+        <option value="$PROJECT_DIR$/views/admin/admin/add.html" />
+        <option value="$PROJECT_DIR$/validate/yearplan.js" />
+        <option value="$PROJECT_DIR$/public/zhuizhongma.js" />
+        <option value="$PROJECT_DIR$/routers/admin/xuqiucode.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/xuqiucode.js" />
+        <option value="$PROJECT_DIR$/views/admin/index.html" />
+        <option value="$PROJECT_DIR$/views/admin/welcome.html" />
+        <option value="$PROJECT_DIR$/public/assets/split/split_serch_footer.html" />
+        <option value="$PROJECT_DIR$/public/assets/split/split_serch_top.html" />
+        <option value="$PROJECT_DIR$/views/admin/supplier/suplist.html" />
+        <option value="$PROJECT_DIR$/public/validate.js" />
+        <option value="$PROJECT_DIR$/routers/admin/supplier.js" />
+        <option value="$PROJECT_DIR$/views/admin/user/index.html" />
+        <option value="$PROJECT_DIR$/views/admin/user/useradd.html" />
+        <option value="$PROJECT_DIR$/routers/admin/approval.js" />
+        <option value="$PROJECT_DIR$/public/admin/js/supplie.js" />
+        <option value="$PROJECT_DIR$/views/admin/admin/departadd.html" />
+        <option value="$PROJECT_DIR$/views/admin/plan/update.html" />
+        <option value="$PROJECT_DIR$/public/assets/split/split_serch.js" />
+        <option value="$PROJECT_DIR$/public/btnonclick.js" />
+        <option value="$PROJECT_DIR$/views/admin/plan/yearplan.html" />
+        <option value="$PROJECT_DIR$/views/admin/plan/urgentplan.html" />
+        <option value="$PROJECT_DIR$/views/admin/plan/monthplan.html" />
+        <option value="$PROJECT_DIR$/views/admin/plan/planlist.html" />
+        <option value="$PROJECT_DIR$/common/test" />
+        <option value="$PROJECT_DIR$/config/db.js" />
+        <option value="$PROJECT_DIR$/views/admin/user/userlist.html" />
+        <option value="$PROJECT_DIR$/views/admin/admin/rolegroup.html" />
+        <option value="$PROJECT_DIR$/routers/admin/admin.js" />
+        <option value="$PROJECT_DIR$/views/admin/plan/updateplan.html" />
+        <option value="$PROJECT_DIR$/routers/admin/user.js" />
+        <option value="$PROJECT_DIR$/routers/admin.js" />
+        <option value="$PROJECT_DIR$/views/admin/plan/plansummary.html" />
+        <option value="$PROJECT_DIR$/views/admin/plan/approval.html" />
+        <option value="$PROJECT_DIR$/routers/admin/plan.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-5" />
+    <option name="y" value="3" />
+    <option name="width" value="1346" />
+    <option name="height" value="698" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="routers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="routers" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="plan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="richtwodai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="richtwodai" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+>>>>>>> 24aed22854e3d9c0bf7c32b6b6099dc1e27b170b
+  </component>
+  <component name="ProjectId" id="1Tj24NSl2WRSVByG9wodZcui9CX" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/admin/plan" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app.js" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
+>>>>>>> 24aed22854e3d9c0bf7c32b6b6099dc1e27b170b
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\suprised_mother_fuck\Desktop\NodeJS Express博客项目实战【239944】前台页面搭建\blog\public" />
+      <recent name="C:\Users\suprised_mother_fuck\Desktop\NodeJS Express博客项目实战【239944】前台页面搭建\blog\public\bootstrap" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\suprised_mother_fuck\IdeaProjects\richtwodai\views\admin\plan" />
+      <recent name="D:\Users\suprised_mother_fuck\IdeaProjects\richtwodai\views\admin\admin" />
+      <recent name="C:\Users\suprised_mother_fuck\Desktop\NodeJS Express项目实战\blog\public" />
+      <recent name="C:\Users\suprised_mother_fuck\Desktop\NodeJS Express项目实战\blog\public\admin\css" />
+      <recent name="C:\Users\suprised_mother_fuck\Desktop\NodeJS Express项目实战\blog\views\admin\plan" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ca0085f-afbf-41c4-a42b-0038d4f9fc8b" name="Default Changelist" comment="" />
+      <created>1572758912415</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572758912415</updated>
+      <workItem from="1572758913787" duration="20804000" />
+      <workItem from="1572834100055" duration="13450000" />
+      <workItem from="1572917036362" duration="5580000" />
+      <workItem from="1572947784026" duration="37687000" />
+      <workItem from="1573094289263" duration="6259000" />
+      <workItem from="1573128502883" duration="2396000" />
+      <workItem from="1573177245422" duration="14181000" />
+      <workItem from="1573264499644" duration="12910000" />
+      <workItem from="1573306369457" duration="702000" />
+      <workItem from="1573307127502" duration="12693000" />
+      <workItem from="1573438647456" duration="1207000" />
+      <workItem from="1573442092791" duration="57307000" />
+      <workItem from="1573553367006" duration="13467000" />
+      <workItem from="1573613769758" duration="40101000" />
+      <workItem from="1573789207037" duration="9146000" />
+      <workItem from="1573799103007" duration="8158000" />
+<<<<<<< HEAD
+      <workItem from="1573891520848" duration="120000" />
+      <workItem from="1573891705582" duration="27025000" />
+=======
+      <workItem from="1573959007422" duration="4809000" />
+>>>>>>> 24aed22854e3d9c0bf7c32b6b6099dc1e27b170b
+    </task>
+    <task id="LOCAL-00001" summary="上传测试">
+      <created>1573891580161</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573891580161</updated>
+    </task>
+    <task id="LOCAL-00002" summary="上传测试">
+      <created>1573891763496</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573891763497</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+<<<<<<< HEAD
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="283193000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22958398" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32857144" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="上传测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传测试" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/css/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1620" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/js/pintuer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2835">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/tasks.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/webConfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql/Changes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/admin/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1523" />
+      </provider>
+    </entry>
+    <entry file="file://F:/source/MedicalProject - 副本/WebRoot/pages/plugins/split_page_plugin_bar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="90" column="10" lean-forward="true" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/split/split_serch_footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="27" column="6" lean-forward="true" selection-start-line="13" selection-end-line="27" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/split/split_serch_top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-513">
+          <caret line="8" selection-start-line="8" selection-end-line="37" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/admin/comment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/xuqiucode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/css/screen.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bootstrap-3.3.7.css" />
+    <entry file="file://$PROJECT_DIR$/routers/admin/approval.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/supplier/suplist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1634">
+          <caret line="80" column="55" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/admin/supplier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/js/supplie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/split/split_serch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="196" column="12" selection-start-line="196" selection-start-column="12" selection-end-line="196" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/plan/urgentplan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/plan/monthplan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#18;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/btnonclick.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-232">
+          <caret line="572" column="4" selection-start-line="572" selection-start-column="4" selection-end-line="572" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/plan/yearplan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3051">
+          <caret line="55" column="38" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#18;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/news/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="787">
+          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/plan/planlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/news/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2187" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/admin/news.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3996">
+          <caret line="148" column="22" lean-forward="true" selection-start-line="148" selection-start-column="22" selection-end-line="148" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/user/useradd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/admin/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/user/userlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/admin/rolegroup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="32" column="70" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="70" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/admin/departadd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/uploads.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/nesting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-440">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/plan/updateplan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="193" column="25" lean-forward="true" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/admin/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3510">
+          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/plan/plansummary.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="199" column="34" selection-start-line="199" selection-start-column="34" selection-end-line="199" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/plan/approval.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/admin/plan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="839" column="16" selection-start-line="839" selection-start-column="16" selection-end-line="839" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+=======
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> 24aed22854e3d9c0bf7c32b6b6099dc1e27b170b
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

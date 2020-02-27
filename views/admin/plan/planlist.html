@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta content="webkit" name="renderer">
+    <title>后台管理中心</title>
+    <link href="/public/assets/css/bootstrap.css" media="screen" rel="stylesheet">
+    <!--    <link rel="stylesheet" href="/public/admin/css/pintuer.css">-->
+    <link href="/public/admin/css/admin.css" rel="stylesheet">
+    <script src="/public/admin/js/jquery.js"></script>
+    <script src="/public/assets/split/split_serch.js"></script>
+    <script src="/public/btnonclick.js"></script>
+</head>
+<body>
+<form action="/admin/plan/planlist" id="planlist" method="get" name="planlist" role="form">
+    <div class="panel-body form-inline">
+        <label for="column">选择模糊查询字段:</label>
+        <select class="form-control" id="column" name="column">
+            <option value="demandid">需求计划编号</option>
+            <option value="xuqiuname">需求计划名称</option>
+            <option value="xqtype">需求计划类型</option>
+            <option value="month">需求月份</option>
+            <option value="xuqiudate">需求日期</option>
+            <option value="xuqiubumen">需求部门</option>
+            <option value="state">未提交</option>
+        </select>
+        <input class="form-control" name="keyword" placeholder="请输入搜索关键字" type="text" value="<%=keyword%>"/>
+        <button class="btn btn-primary" id="serchCol" type="submit">查询</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover text-center">
+            <thead>
+            <tr>
+                <th style="width: 12%;">ID</th>
+                <th style="width: 8%;">类型</th>
+                <th style="width: 8%;">创建人</th>
+                <th style="width: 8%;">创建时间</th>
+                <th style="width: 8%;">需求名称</th>
+                <th style="width: 12%;">状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%if(data.length!=0&&data){%>
+            <%data.forEach(e=>{%>
+            <tr class="active">
+                <td><%=e.demandid%></td>
+                <td><%=e.xqtype%></td>
+                <td><%=e.author%></td>
+                <td><%=e.createTime%></td>
+                <td><%=e.xuqiuname%></td>
+                <%if(e.state==0){%>
+                <td>未提交</td>
+                <%}else{%>
+                <td>已提交</td>
+                <%}%>
+                <td>
+                    <button class="btn btn-group-sm" onclick="viewPlan(<%=e.demandid%>)">详情</button>
+                </td>
+            </tr>
+            <%})%>
+            <%}%>
+            <tr>
+                <td colspan="8">
+                    <div class="pagelist">
+                        <%- show%>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div class="col-sm-5 form-inline">
+            <label for="lineSize">每页显示</label>
+            <select class="form-control" id="lineSize" name="lineSize" onchange="lineSizeChange()">
+                <option name="lineSize" value="5">5</option>
+                <option name="lineSize" value="10">10</option>
+                <option name="lineSize" value="20">20</option>
+                <option name="lineSize" value="50">50</option>
+            </select>
+        </div>
+        <input id="demandid" name="demandid" style="display: none" value="">
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>部门待审批需求</title>
+  <link rel="stylesheet" href="/public/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/admin/css/screen.css">
+  <script src="/public/admin/js/jquery.js"></script>
+  <script src="/public/btnonclick.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#first-tab").addClass('buttonHover');
+    });
+
+    function navigate_tabs(container, tab) {
+      $(".b").css('display', 'none');
+      $(".c").css('display', 'none');
+      $(".a").css('display', 'none');
+
+      $("#first-tab").removeClass('buttonHover');
+      $("#second-tab").removeClass('buttonHover');
+      $("#third-tab").removeClass('buttonHover');
+
+      $("#" + tab).addClass('buttonHover');
+      $("." + container).show('slow');
+    }
+    function approvalplan() {
+      var id = '(';
+      $.each($('input:checkbox:checked'),function(){
+        id +=$(this).val()+',';
+      });
+      id = id.substring(0, id.lastIndexOf(','));
+      id +=')';
+      if(id.length <= 2)
+      {
+        alert('选择要审批的数据');
+        return;
+      }
+      $.ajax({
+        type: "POST",//方法类型
+        dataType: "json",//预期服务器返回的数据类型
+        url: "/admin/plan/approval" ,//url
+        data: $('#shenpiform').serialize(),
+        success: function (result) {
+          console.log(result);//打印服务端返回的数据(调试用)
+          if (result.resultCode == 200) {
+            alert("审批成功");
+            window.location.reload();
+          };
+        },error : function() {
+          alert("异常！");
+        }
+      });
+    }
+    function backplan() {
+      var id = '(';
+      $.each($('input:checkbox:checked'),function(){
+        id +=$(this).val()+',';
+      });
+      id = id.substring(0, id.lastIndexOf(','));
+      id +=')';
+      if(id.length <= 2)
+      {
+        alert('选择要审批退回的数据');
+        return;
+      }
+      $("#shenpiform").removeAttr('action');
+      $("#shenpiform").attr('action','/admin/plan/backavl');
+      $('#shenpiform').submit();
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <div>
+      <h3>部门待审批需求</h3>
+    </div>
+    <!-- 创建物料信息输入区域 -->
+    <!-- 物料信息展示区域 -->
+    <form id="shenpiform" method="post" action="/admin/plan/approval">
+    <div>
+      <div align="center">
+        <div id="wrap">
+          <a href="javascript:navigate_tabs('a','first-tab');" class="buttons" id="first-tab">年度计划</a>
+          <a href="javascript:navigate_tabs('b','second-tab');" class="buttons" id="second-tab">月度计划</a>
+          <a href="javascript:navigate_tabs('c','third-tab');" class="buttons" id="third-tab">紧急计划</a>
+          <div id="body" align="center">
+            <div class="a">
+              <table class="table table-bordered table-striped table-hover text-center">
+                <thead>
+                  <tr>
+                    <th style="width: 5%;">选择</th>
+                    <th>需求计划编码</th>
+                    <th>物料分类名称</th>
+                    <th>物料名称</th>
+                    <th>规格</th>
+                    <th>型号</th>
+                    <th>单位</th>
+                    <th>需求数量</th>
+                    <th>需求月份</th>
+                    <th>需求日期</th>
+                    <th>货源是否确定</th>
+                    <th>期望供应商</th>
+                    <th>固定供应商</th>
+                    <th>备注</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <%if(data){%>
+                <%data.forEach(e=>{%>
+                <%if(e.xqtype=='年度计划'){%>
+                  <tr>
+                    <td>
+                      <input type="checkbox" value="<%=e.demandid%>" name="check">
+                    </td>
+                    <td><%=e.demandid%></td>
+                    <td><%=e.classname%></td>
+                    <td><%=e.mname%></td>
+                    <td><%=e.guige%></td>
+                    <td><%=e.xinhao%></td>
+                    <td><%=e.danwei%></td>
+                    <td><%=e.xuqiunum%></td>
+                    <td><%=e.month%></td>
+                    <td><%=e.xuqiudate%></td>
+                    <td><%=e.huoyuan%></td>
+                    <%if(sup){%>
+                    <%sup.forEach(s=>{%>
+                    <%if(s.sid==e.qiwangsid){%>
+                    <td><%=s.sname%></td>
+                    <%}%>
+                    <%})%>
+                    <%}%>
+                    <%if(sup){%>
+                    <%sup.forEach(s=>{%>
+                    <%if(s.sid==e.gudinsid){%>
+                    <td><%=s.sname%></td>
+                    <%}%>
+                    <%})%>
+                    <%}%>
+                    <td><%=e.beizhu%></td>
+                  </tr>
+                <%}%>
+                <%})%>
+                <%}%>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="b">
+
+              <table class="table table-bordered table-striped table-hover text-center">
+                <thead>
+                <tr>
+                  <th style="width: 5%;">选择</th>
+                  <th>需求计划编码</th>
+                  <th>物料分类名称</th>
+                  <th>物料名称</th>
+                  <th>规格</th>
+                  <th>型号</th>
+                  <th>单位</th>
+                  <th>需求数量</th>
+                  <th>需求月份</th>
+                  <th>需求日期</th>
+                  <th>货源是否确定</th>
+                  <th>期望供应商</th>
+                  <th>固定供应商</th>
+                  <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%if(data){%>
+                <%data.forEach(e=>{%>
+                <%if(e.xqtype=='月度计划'){%>
+                <tr>
+                  <td>
+                    <input type="checkbox" value="<%=e.demandid%>" name="check">
+                  </td>
+                  <td><%=e.demandid%></td>
+                  <td><%=e.classname%></td>
+                  <td><%=e.mname%></td>
+                  <td><%=e.guige%></td>
+                  <td><%=e.xinhao%></td>
+                  <td><%=e.danwei%></td>
+                  <td><%=e.xuqiunum%></td>
+                  <td><%=e.month%></td>
+                  <td><%=e.xuqiudate%></td>
+                  <td><%=e.huoyuan%></td>
+                  <%if(sup){%>
+                  <%sup.forEach(s=>{%>
+                  <%if(s.sid==e.qiwangsid){%>
+                  <td><%=s.sname%></td>
+                  <%}%>
+                  <%})%>
+                  <%}%>
+                  <%if(sup){%>
+                  <%sup.forEach(s=>{%>
+                  <%if(s.sid==e.gudinsid){%>
+                  <td><%=s.sname%></td>
+                  <%}%>
+                  <%})%>
+                  <%}%>
+                  <td><%=e.beizhu%></td>
+                </tr>
+                <%}%>
+                <%})%>
+                <%}%>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="c" align="center">
+              <table class="table table-bordered table-striped table-hover text-center">
+                <thead>
+                <tr>
+                  <th style="width: 5%;">选择</th>
+                  <th>需求计划编码</th>
+                  <th>物料分类名称</th>
+                  <th>物料名称</th>
+                  <th>规格</th>
+                  <th>型号</th>
+                  <th>单位</th>
+                  <th>需求数量</th>
+                  <th>需求月份</th>
+                  <th>需求日期</th>
+                  <th>货源是否确定</th>
+                  <th>期望供应商</th>
+                  <th>固定供应商</th>
+                  <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%if(data){%>
+                <%data.forEach(e=>{%>
+                <%if(e.xqtype=='紧急计划'){%>
+                <tr>
+                  <td>
+                    <input type="checkbox" value="<%=e.demandid%>" name="check">
+                  </td>
+                  <td><%=e.demandid%></td>
+                  <td><%=e.classname%></td>
+                  <td><%=e.mname%></td>
+                  <td><%=e.guige%></td>
+                  <td><%=e.xinhao%></td>
+                  <td><%=e.danwei%></td>
+                  <td><%=e.xuqiunum%></td>
+                  <td><%=e.month%></td>
+                  <td><%=e.xuqiudate%></td>
+                  <td><%=e.huoyuan%></td>
+                  <%if(sup){%>
+                  <%sup.forEach(s=>{%>
+                  <%if(s.sid==e.qiwangsid){%>
+                  <td><%=s.sname%></td>
+                  <%}%>
+                  <%})%>
+                  <%}%>
+                  <%if(sup){%>
+                  <%sup.forEach(s=>{%>
+                  <%if(s.sid==e.gudinsid){%>
+                  <td><%=s.sname%></td>
+                  <%}%>
+                  <%})%>
+                  <%}%>
+                  <td><%=e.beizhu%></td>
+                </tr>
+                <%}%>
+                <%})%>
+                <%}%>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 按钮功能区域 -->
+    <div align="center">
+      <button type="button" class="btn btn-primary submit" onclick="approvalplan()">审批通过</button>
+      <button type="button" class="btn btn-primary" onclick="backplan()">审批退回</button>
+      <button type="button" class="btn btn-primary">复制</button>
+      <button type="button" class="btn btn-primary">打印</button>
+      <button type="button" class="btn btn-primary">导出</button>
+      <button type="button" class="btn btn-primary">附件</button>
+      <button type="button" class="btn btn-primary">提醒（X）</button>
+      <button type="button" class="btn btn-primary">删除</button>
+      <button type="button" class="btn btn-primary">关闭/退出</button>
+    </div>
+    </form>
+  </div>
+</body>
+</body>
+
+</html>

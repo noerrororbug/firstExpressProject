@@ -1,0 +1,7 @@
+<ul >
+    <% actions.forEach(e=>{ %>
+    <%if(e.gid==gid && e.type<=rid){%>
+    <li><a href="<%=e.url%>" target="right"><span class="<%=e.aicon%>"></span><%=e.name%></a></li>
+    <%}%>
+    <%}) %>
+</ul>

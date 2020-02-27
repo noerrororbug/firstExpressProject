@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>物资需求计划修改</title>
+  <link rel="stylesheet" href="/public/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/admin/css/screen.css">
+  <script src="/public/admin/js/jquery.js"></script>
+  <script src="/public/btnonclick.js"></script>
+  <script src="/public/jquery-1.4.4.min.js"></script>
+  <script src="/public/jquery.jqprint-0.3.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#first-tab").addClass('buttonHover');
+    });
+
+    function navigate_tabs(container, tab) {
+      $(".b").css('display', 'none');
+      $(".c").css('display', 'none');
+      $(".a").css('display', 'none');
+
+      $("#first-tab").removeClass('buttonHover');
+      $("#second-tab").removeClass('buttonHover');
+      $("#third-tab").removeClass('buttonHover');
+
+      $("#" + tab).addClass('buttonHover');
+      $("." + container).show('slow');
+    }
+    function selectMclass() {
+      var classcode = $("#clcode").find("option:selected").val();
+      var material = JSON.parse('<%-JSON.stringify(meter)-%>');
+      var option = '<option value="">--请选择--</option>';
+      $.each(material,function (i,item) {
+        if(item.classcode == classcode){
+          option += "<option value='"+item.mcode+"'>"+item.mcode+"</option>";
+          if($("#clname").html()!=(item.classname)){
+            var noview = '<input name="clna" value="'+item.classname+'" style="display: none" readonly>';
+            $("#clname").html(item.classname+noview);
+          }
+        }
+      });
+      $("#mclass").html(option);
+    }
+    function selectmeterial() {
+      var mclass = $("#mclass").find("option:selected").val();
+      var material = JSON.parse('<%-JSON.stringify(meter)-%>');
+      $.each(material,function (i,item) {
+        if(item.mcode == mclass){
+          if($("#mname").html()!=(item.mname)){
+            var noview = '<input name="mna" value="'+item.mname+'" style="display: none" readonly>';
+            $("#mname").html(item.mname+noview);
+          }
+        }
+      });
+      //$("#mname").html(option);
+    }
+    $(function () {
+      $(".add").click(function () {
+        $(".submit").removeAttr("disabled")
+      });
+    });
+    $(function(){
+      function number(){
+        for(var i=0;i< $(".numberClass").length;i++){
+          $(".numberClass").get(i).innerHTML = i+1;
+        }
+      }
+      number();
+    });
+
+    function a() {
+      $("#ddd").jqprint();
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <div>
+      <h3>物资需求计划修改</h3>
+    </div>
+    <!-- 创建物料信息输入区域 -->
+    <form method="post" action="/admin/plan/updateplan">
+    <div align="center">
+      <div class="panel-body form-inline">
+        <label>
+          需求计划类型:
+          <input type="text" class="form-control" value="<%=data[0].xqtype%>" readonly>
+        </label>
+        <label>
+          需求计划编码:
+          <input type="text" class="form-control" value="<%=data[0].demandid%>" readonly>
+        </label>
+        <label>
+          需求计划名称:
+          <input name="xuqna" type="text" class="form-control add" value="<%=data[0].xuqiuname%>">
+        </label>
+        <label>
+          需求部门:
+          <input type="text" class="form-control"  value="<%=data[0].name%>" readonly>
+        </label>
+      </div>
+      <div class="panel-body form-inline">
+        <label>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp需求人员:
+          <input type="text" class="form-control" value="<%=data[0].xuqiurenyuan%>" readonly>
+        </label>
+        <label>
+          需求计划状态:
+          <input type="text" class="form-control" value="<%=data[0].xuqiustate%>" readonly>
+        </label>
+        <label>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp审批状态:
+          <%if(data[0].state==0){%>
+          <input type="text" class="form-control" value="未提交" readonly>
+          <%}else if(data[0].state==1){%>
+          <input type="text" class="form-control" value="审批中" readonly>
+          <%}else if(data[0].state==2){%>
+          <input type="text" class="form-control" value="审批退回" readonly>
+          <%}else if(data[0].state==3){%>
+          <input type="text" class="form-control" value="审批通过" readonly>
+          <%}%>
+        </label>
+        <label>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp备注:
+          <input name="bz" type="text" class="form-control add" value="<%=data[0].beizhu%>">
+        </label>
+        <!-- <input type="button" value="添加" @click="add" class="btn btn-primary"> -->
+      </div>
+    </div>
+
+    <!-- 物料信息展示区域 -->
+    <div>
+      <div align="center">
+        <div id="wrap">
+          <a href="javascript:navigate_tabs('a','first-tab');" class="buttons" id="first-tab">基本信息</a>
+          <a href="javascript:navigate_tabs('b','second-tab');" class="buttons" id="second-tab">流程信息</a>
+          <a href="javascript:navigate_tabs('c','third-tab');" class="buttons" id="third-tab">系统信息</a>
+          <div id="body" align="center">
+            <div class="a">
+              <div id="ddd">
+                <table class="table table-bordered table-striped table-hover text-center">
+                  <thead>
+                  <tr>
+                    <th>需求计划编码</th>
+                    <th class="add">物料分类编码</th>
+                    <th>物料分类名称</th>
+                    <th class="add">物料编码</th>
+                    <th>物料名称</th>
+                    <th>规格</th>
+                    <th>型号</th>
+                    <th>单位</th>
+                    <th>需求数量</th>
+                    <th>需求月份</th>
+                    <th>需求日期</th>
+                    <th>货源是否确定</th>
+                    <th>期望供应商</th>
+                    <th>固定供应商</th>
+                    <th>备注</th>
+                    <!--                    <th>物料追踪码</th>-->
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <%if(data){%>
+                  <tr>
+                    <td><%=data[0].demandid%><input name="deid" value="<%=data[0].demandid%>" style="display: none" readonly></td>
+                    <td>
+                      <%if(mclass){%>
+                      <select id="clcode" name="clco" style="width: 100%; height: 18px; border-style: none;" onchange="selectMclass()">
+                        <option value="<%=data[0].classcode%>"><%=data[0].classcode%></option>
+                        <%mclass.forEach(e=>{%>
+                        <%if(data[0].classcode!=e.classcode){%>
+                        <option value="<%=e.classcode%>"><%=e.classcode%></option>
+                        <%}%>
+                        <%})%>
+                      </select>
+                      <%}%>
+                    </td>
+                    <td id="clname"><%=data[0].classname%><input name="clna" value="<%=data[0].classname%>" style="display: none" readonly></td>
+                    <td>
+                      <select id="mclass" name="mco" style="width: 100%; height: 18px; border-style: none;" onchange="selectmeterial()">
+                        <option value="<%=data[0].mcode%>"><%=data[0].mcode%></option>
+                      </select>
+                    </td>
+                    <td id="mname"><%=data[0].mname%><input name="mna" value="<%=data[0].mname%>" style="display: none" readonly></td>
+                    <td><input name="gge" type="text" value="<%=data[0].guige%>" style="width: 65px"></td>
+                    <td><input name="xhao" type="text" value="<%=data[0].xinhao%>%>" style="width: 65px"></td>
+                    <td><%=data[0].danwei%></td>
+                    <td><%=data[0].xuqiunum%></td>
+                    <td><%=data[0].month%></td>
+                    <td><%=data[0].xuqiudate%></td>
+                    <td><%=data[0].huoyuan%></td>
+                    <%if(sup){%>
+                    <%sup.forEach(s=>{%>
+                    <%if(s.sid==data[0].qiwangsid){%>
+                    <td><%=s.sname%></td>
+                    <%}%>
+                    <%})%>
+                    <%}%>
+                    <%if(sup){%>
+                    <%sup.forEach(s=>{%>
+                    <%if(s.sid==data[0].gudinsid){%>
+                    <td><%=s.sname%></td>
+                    <%}%>
+                    <%})%>
+                    <%}%>
+                    <td><%=data[0].beizhu%></td>
+                    <!--                    <td><%=data[0].zhuizhongma%></td>-->
+                  </tr>
+                  <%}%>
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+            <div class="b">
+
+              <table class="table table-bordered table-striped table-hover text-center">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>审批人</th>
+                    <th>审批时间</th>
+                    <th>审批意见</th>
+                    <th>说明</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <%if(liu){%>
+                <%liu.forEach(e=>{%>
+                  <tr>
+                    <td><span class="numberClass"></span></td>
+                    <td><%=e.uname%></td>
+                    <td><%=e.time%></td>
+                    <td><%=e.opinion%></td>
+                    <td><%=e.explains%></td>
+                  </tr>
+                <%})%>
+                <%}%>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="c" align="center">
+              <div class="panel-body form-inline">
+                <label>&nbsp&nbsp&nbsp&nbsp编制人:
+                  <input type="text" class="form-control" value="<%=data[0].uname%>" readonly>
+                </label>
+              </div>
+              <div class="panel-body form-inline">
+                <label>编制时间:
+                  <input type="text" class="form-control" value="<%=data[0].createTime%>" readonly>
+                </label>
+              </div>
+              <div class="panel-body form-inline">
+                <label>&nbsp&nbsp&nbsp&nbsp修改人:
+                  <input name="cID" value="<%=useridentify%>" type="text" class="form-control" readonly>
+                </label>
+              </div>
+              <div class="panel-body form-inline">
+                <label>修改时间:
+                  <input name="chT" type="date" class="form-control">
+                </label>
+              </div>
+              <div class="panel-body form-inline">
+                <label>修改原因:
+                  <input name="cyy" type="text" class="form-control">
+                </label>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 按钮功能区域 -->
+    <div align="center">
+      <button type="submit" class="btn btn-primary submit" disabled>修改</button>
+      <button type="button" class="btn btn-primary">复制</button>
+      <button type="button" class="btn btn-primary"  onclick="a()">打印</button>
+    </div>
+    </form>
+  </div>
+</body>
+
+</html>

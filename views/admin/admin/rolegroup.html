@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="/public/admin/css/pintuer.css">
+<link rel="stylesheet" href="/public/admin/css/admin.css">
+<script src="/public/admin/js/jquery.js"></script>
+<script src="/public/admin/js/pintuer.js"></script>
+<script>
+    $(function(){
+      function number(){
+        for(var i=0;i< $(".numberClass").length;i++){
+          $(".numberClass").get(i).innerHTML = i+1;
+        }
+      }
+      number();
+    });
+</script>
+</head>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 角色权限管理</strong> <a href="" style="float:right; display:none;"></a></div>
+  <div class="padding border-bottom">
+    <ul class="search" style="padding-left:10px;">
+      <li>搜索：</li>
+
+      <li>
+        <form action="/admin/admin/pri" method="get">
+          <input type="text" value="<%=search%>" placeholder="按角色搜索" name="search" class="input" style="width:250px; line-height:17px;display:inline-block" />
+          <button class="button border-main icon-search" type="submit">搜索</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+  <table class="table table-hover text-center">
+    <tr>
+      <th width="100" style="text-align:left; padding-left:20px;">序号</th>
+      <th>名称</th>
+    </tr>
+    <!-- ejs 的模板引擎 -->
+    <%if(data){%>
+    <% data.forEach(item=>{%>
+    <tr>
+      <td><span class="numberClass"></span></td>
+      <td><%=item.title%></td>
+    </tr>
+    <% }) %>
+    <%}%>
+  </table>
+</div>
+</body>
+</html>

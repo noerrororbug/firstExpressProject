@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="renderer" content="webkit">
+  <title>供应商管理</title>
+  <link rel="stylesheet" media="screen" href="/public/assets/css/bootstrap.css">
+  <script src="/public/admin/js/jquery.js"></script>
+  <script src="/public/admin/js/supplie.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .tle {
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    .tab {
+      margin: 20px 0;
+    }
+
+    .table th {
+      text-align: center;
+    }
+
+    .table td {
+      vertical-align: middle;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h3 style="text-align: center;">供应商管理</h3>
+  <form role="form" method="post" action="" id="suplist">
+  <div class="panel-body form-inline" style="float: right;">
+    <input name="keyWord" type="text" class="form-control" id="exampleInputAmount" placeholder="搜索">
+    <button onclick="serch()" type="button" class="btn btn-default">搜索</button>
+    <button onclick="delSup()" type="button" class="btn btn-danger">删除</button>
+  </div>
+  <div class="tab panel-body">
+    <table id="list" class="table table-bordered table-striped table-hover">
+      <thead>
+      <tr>
+        <th style="width: 5%;">选择</th>
+        <!--          <th style="width: 5%;">序号</th>-->
+        <th>名称</th>
+        <th>联系方式</th>
+        <th>邮箱</th>
+      </tr>
+      </thead>
+      <tbody>
+      <%if(data){%>
+      <%data.forEach(e=>{%>
+      <%if(e.sid!=1){%>
+      <tr>
+        <td>
+          <input type="checkbox" value="<%=e.sid%>" name="check">
+        </td>
+        <!--          <td>1</td>-->
+        <td><%=e.sname%></td>
+        <td><%=e.phone%></td>
+        <td><%=e.email%></td>
+      </tr>
+      <%}%>
+      <%})%>
+      <%}%>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel-body form-inline">
+    <label>
+      名称:
+    </label>
+    <input name="sname" type="text" class="form-control">
+
+    <label>
+      电话:
+    </label>
+    <input name="phone" type="text" class="form-control">
+    <label>
+      邮箱:
+    </label>
+    <input name="email" type="text" class="form-control">
+    <input onclick="addsup()" type="button" value="添加" class="btn btn-primary">
+  </div>
+
+</form>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="renderer" content="webkit">
+  <title>供应商管理</title>
+  <link rel="stylesheet" media="screen" href="/public/assets/css/bootstrap.css">
+  <script src="/public/admin/js/jquery.js"></script>
+  <script src="/public/admin/js/supplie.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .tle {
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    .tab {
+      margin: 20px 0;
+    }
+
+    .table th {
+      text-align: center;
+    }
+
+    .table td {
+      vertical-align: middle;
+      text-align: center;
+    }
+  </style>
+  <script>
+    $(function(){
+      function number(){
+        for(var i=0;i< $(".numberClass").length;i++){
+          $(".numberClass").get(i).innerHTML = i+1;
+        }
+      }
+      number();
+    });
+    function serchbymname() {
+      $('#maform').removeAttr('method');
+      $('#maform').attr('method','get');
+      $('#maform').submit();
+    }
+    function addmaterial() {
+      $('#maform').removeAttr('method');
+      $('#maform').attr('method','post');
+      $('#maform').submit();
+    }
+  </script>
+</head>
+
+<body>
+  <h3 style="text-align: center;">物料管理</h3>
+  <form id="maform" method="post" action="/admin/supplier/materiallist">
+  <div class="panel-body form-inline" style="float: right;">
+    <input name="keyword" value="<%=keyword%>" type="text" class="form-control" id="exampleInputAmount" placeholder="按名称搜索">
+    <button onclick="serchbymname()" type="button" class="btn btn-default">搜索</button>
+  </div>
+  <div class="tab panel-body">
+    <table id="list" class="table table-bordered table-striped table-hover">
+      <thead>
+      <tr>
+        <th style="width: 5%;">序号</th>
+        <th>物料编码</th>
+        <th>物料名</th>
+        <th>分类名</th>
+      </tr>
+      </thead>
+      <tbody>
+      <%if(data){%>
+      <%data.forEach(e=>{%>
+      <tr>
+        <td><span class="numberClass"></span></td>
+        <td><%=e.mcode%></td>
+        <td><%=e.mname%></td>
+        <td><%=e.classname%></td>
+      </tr>
+      <%})%>
+      <%}%>
+      </tbody>
+      <tr>
+        <td colspan="8">
+          <div class="pagelist">
+            <%- show%>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="panel-body form-inline">
+    <label>
+      物料编码:
+    </label>
+    <input name="mcode" type="text" class="form-control">
+
+    <label>
+      物料名:
+    </label>
+    <input name="mname" type="text" class="form-control">
+    <label>
+      单位:
+    </label>
+    <input name="dw" type="text" class="form-control">
+    <label>
+      分类名:
+    </label>
+    <select class="form-control" name="classcode">
+      <%if(m){%>
+      <%m.forEach(e=>{%>
+      <option value="<%=e.classcode%>"><%=e.classname%></option>
+      <%})%>
+      <%}%>
+    </select>
+    <input onclick="addmaterial()" type="button" value="添加" class="btn btn-primary">
+  </div>
+</form>
+</body>
+
+</html>

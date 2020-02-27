@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理中心</title>
+    <script src="/public/assets/split/split_serch.js"></script>
+</head>
+<body>
+<div class="" style="display: inline-block">
+    <div class="form-group" style="display: inline-block">
+        <label for="column">选择模糊查询字段</label>
+    <select id="column" name="column" class="form-control">
+        <option value="demandid">需求计划编号</option>
+        <option value="xuqiuname">需求计划名称</option>
+        <option value="xqtype">需求计划类型</option>
+        <option value="dingdantype">是否订单型</option>
+        <option value="author">需求计划创建人</option>
+        <option value="createTime">需求创建时间</option>
+        <option value="yusuannei">是否预算内</option>
+        <option value="classcode">物料分类编码</option>
+        <option value="classname">物料分类名</option>
+        <option value="mcode">物料编码</option>
+        <option value="mname">物料名称</option>
+        <option value="xuqiurenyuan">需求人员</option>
+        <option value="month">需求月份</option>
+        <option value="xuqiudate">需求日期</option>
+        <option value="qiwangsid">期望供货商</option>
+        <option value="gudinsid">固定供货商</option>
+        <option value="xuqiubumen">需求部门</option>
+        <option value="state">审批状态</option>
+    </select>
+    </div>
+    <div class="form-group" style="display: inline-block">
+        <input name="keyword" type="text" class="form-control">
+    </div>
+    <div class="form-group" style="display: inline-block">
+    <button class="btn btn-primary" type="submit">查询</button>
+    </div>
+</div>
+</body>
+</html>
