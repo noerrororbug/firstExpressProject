@@ -1,7 +1,8 @@
 ﻿# richtwodai
 
-#### 介绍
-#### 软件架构
+####介绍
+第一次使用Express框架
+####软件架构
 软件架构说明
 Express +mysql
 
